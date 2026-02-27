@@ -1,0 +1,147 @@
+/* =============================================
+   Tema Dark/Light - Completo e mais robusto
+   ============================================= */
+
+/* Variáveis base do Bootstrap (light mode padrão) */
+:root {
+    --bs-body-bg: #ffffff;
+    --bs-body-color: #212529;
+    --bs-primary: #0d6efd;
+}
+
+/* Variáveis dark mode */
+[data-bs-theme="dark"] {
+    --bs-body-bg: #0d1117;
+    --bs-body-color: #c9d1d9;
+    --bs-primary: #58a6ff;
+    --bs-primary-rgb: 88, 166, 255;
+    --bs-secondary-bg: #161b22;
+    --bs-tertiary-bg: #21262d;
+    --bs-border-color: #30363d;
+}
+
+/* Body e html */
+html, body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Navbar */
+.navbar {
+    transition: background-color 0.4s ease;
+}
+[data-bs-theme="dark"] .navbar.bg-primary {
+    background-color: #0a0e14 !important;
+}
+
+/* Seções do currículo */
+.resume-section {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.resume-section-content {
+    background-color: transparent;
+}
+
+/* Textos e links */
+h1, h2, h3, h4, h5, h6, p, .lead, .subheading {
+    color: inherit;
+}
+
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+a {
+    color: var(--bs-primary);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--bs-primary);
+}
+
+/* Linhas <hr> */
+hr {
+    border-color: var(--bs-border-color);
+    transition: border-color 0.4s ease;
+}
+
+/* Ícones sociais e outros */
+.social-icon {
+    color: var(--bs-body-color);
+}
+
+.social-icon:hover {
+    color: var(--bs-primary);
+}
+
+/* Theme Toggle Fixo - Canto superior esquerdo */
+.theme-toggle-fixed {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1055;
+    background-color: rgba(255, 255, 255, 0.94);
+    border-radius: 999px;
+    padding: 6px 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+[data-bs-theme="dark"] .theme-toggle-fixed {
+    background-color: rgba(13, 17, 23, 0.94);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.5);
+    color: #e6edf3;
+}
+
+/* Ícones sol/lua */
+.form-check-label .fa-sun,
+.form-check-label .fa-moon {
+    transition: opacity 0.2s ease;
+    vertical-align: -0.1em;
+}
+
+.form-check-input:checked ~ .form-check-label .fa-sun {
+    display: none;
+}
+
+.form-check-input:not(:checked) ~ .form-check-label .fa-moon {
+    display: none;
+}
+
+.form-check-input:checked ~ .form-check-label .fa-moon,
+.form-check-input:not(:checked) ~ .form-check-label .fa-sun {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 1.15rem;
+}
+
+/* Switch estilizado */
+.form-check-input {
+    width: 2.5em;
+    height: 1.35em;
+    cursor: pointer;
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(88, 166, 255, 0.25);
+}
+
+/* Ajustes mobile */
+@media (max-width: 991px) {
+    .theme-toggle-fixed {
+        top: 10px;
+        left: 10px;
+        padding: 6px 12px;
+        font-size: 0.95rem;
+    }
+}
+
+.resume-section a{
+    text-decoration: none;
+}
